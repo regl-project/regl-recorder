@@ -4,7 +4,7 @@
  [![npm version](https://badge.fury.io/js/regl-recorder.svg)](https://badge.fury.io/js/regl-recorder)
 
 
-A small utility that can be used for recording an video in the
+A small utility that can be used for recording videos in the
 WebGL framework [regl](https://github.com/mikolalysenko/regl).
 
 # Example
@@ -98,7 +98,7 @@ const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT))
 var recorder = createReglRecorder(regl, 30)
 ```
 
-Secondly, at the end of the frame, we must insert
+Secondly, at the end of a frame, we must insert
 
 ```javascript
     recorder.frame(viewportWidth, viewportHeight)
@@ -137,7 +137,7 @@ use [these extensions](https://github.com/stackgl/headless-gl#what-extensions-ar
 
 This creates a new recorder instance.
 
-* `regl` the regl context
+* `regl` a regl context
 * `frames` the number of frames to record. The recording rate is
   30FPS, so the resulting video will be `frames/30` seconds long.
 
