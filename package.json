@@ -1,7 +1,7 @@
 {
   "name": "regl-recorder",
   "version": "0.1.0",
-  "description": "Records movies for regl",
+  "description": "Small utility for recording videos in regl.",
   "main": "index.js",
   "directories": {
     "example": "example"
