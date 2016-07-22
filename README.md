@@ -7,6 +7,8 @@
 A small utility that can be used for recording videos in the
 WebGL framework [regl](https://github.com/mikolalysenko/regl).
 
+[![Result](http://img.youtube.com/vi/1lB319WdSoU/0.jpg)](https://youtu.be/1lB319WdSoU)
+
 # Example
 
 A small example for recording a rotating bunny is shown below
