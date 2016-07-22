@@ -22,8 +22,8 @@ const bunny = require('bunny')
 const VIDEO_WIDTH = 3840 * 0.1
 const VIDEO_HEIGHT = 2160 * 0.1
 
-const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT))
-var recorder = createReglRecorder(regl, 30)
+const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT, {preserveDrawingBuffer: true}))
+var recorder = createReglRecorder(regl, 150)
 
 const drawBunny = regl({
   vert: `
@@ -87,7 +87,6 @@ regl.frame(({viewportWidth, viewportHeight}) => {
 
   recorder.frame(viewportWidth, viewportHeight)
 })
-
 ```
 
 Notice from the above that we have to do two things to use
@@ -96,8 +95,8 @@ Notice from the above that we have to do two things to use
 give it to the `regl`:
 
 ```javascript
-const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT))
-var recorder = createReglRecorder(regl, 30)
+const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT, {preserveDrawingBuffer: true}))
+var recorder = createReglRecorder(regl, 150)
 ```
 
 Secondly, at the end of a frame, we must insert
@@ -112,9 +111,9 @@ And then you start the recording by running the program in node with
 node example/index.js
 ```
 
-If you do the above, `regl-recorder` will record 30 frames of a bunny
+If you do the above, `regl-recorder` will record 150 frames of a bunny
 animation. Since the tool records at 30FPS, this will result in a
-minute long video.
+5 minutes long video.
 
 This tool will not output a video file, but only the recorded
 frames. They are put into a folder named something like
