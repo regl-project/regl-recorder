@@ -6,7 +6,7 @@ const bunny = require('bunny')
 const VIDEO_WIDTH = 3840 * 0.1
 const VIDEO_HEIGHT = 2160 * 0.1
 
-const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT))
+const regl = require('regl')(require('gl')(VIDEO_WIDTH, VIDEO_HEIGHT, {preserveDrawingBuffer: true}))
 var recorder = createReglRecorder(regl, 150)
 
 const drawBunny = regl({
